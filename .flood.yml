@@ -1,4 +1,4 @@
-cookbook:
+cookbooks:
   - name: Navigating
     files:
       - element/flood-challenge/flood-challenge.ts
