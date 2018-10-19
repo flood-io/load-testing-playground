@@ -2,3 +2,6 @@ cookbooks:
   - name: Navigating
     files:
       - element/flood-challenge/flood-challenge.ts
+  - name: Forms
+    files:
+      - element/flood-challenge/flood-challenge.ts
