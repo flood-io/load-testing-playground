@@ -5,6 +5,10 @@ stream:
   duration: 18
 files:
   - ./flood-challenge.ts
+example:
+  highlight:
+    - 25
+    - 98
 ---
 
 # Flood Challenge Example
