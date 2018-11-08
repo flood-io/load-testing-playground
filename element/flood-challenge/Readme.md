@@ -7,8 +7,8 @@ files:
   - ./flood-challenge.ts
 example:
   highlight:
-    - 25
-    - 98
+    - 15
+    - 88
 ---
 
 # Flood Challenge Example
