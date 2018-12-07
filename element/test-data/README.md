@@ -26,7 +26,7 @@ npx @flood/element-cli ./element/test-data/example.ts --no-headless
 
 ### Using [Flood](https://flood.io)
 
-Upload [example.ts](./example.ts) to an existing Stream on Flood, or [run it directly on Flood](https://app.flood.io/launch/github/flood-io/load-testing-playground/element/test-data)
+Upload [example.ts](./example.ts) and [users.csv][] to an existing Stream on Flood, or [run it directly on Flood](https://app.flood.io/launch/github/flood-io/load-testing-playground/element/test-data)
 
 ## The idea behind the example
 
