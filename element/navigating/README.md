@@ -5,7 +5,7 @@ stream:
   browser_density: 40
   duration: 18
 files:
-  - ./test.ts
+  - ./example.ts
 ---
 
 # Navigating

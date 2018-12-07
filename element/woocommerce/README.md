@@ -7,8 +7,8 @@ files:
   - ./example.ts
 example:
   highlight:
-    - 18
-    - 25
+    - 8
+    - 15
 ---
 
 # Load testing a WooCommerce store example
