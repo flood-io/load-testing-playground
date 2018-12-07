@@ -29,6 +29,7 @@ Upload [example.ts](./example.ts) to an existing Stream on Flood, or [run it dir
 
 ## The idea behind the example
 
-This detailed example will show you how to actually build a working Flood Element script that uses a variety of different classes to identify objects you would like to interact with in order to successfully simulate a typical online store checkout process.
+This detailed example will show you how to actually build a working Flood Element script that uses a variety of different classes to identify objects you would like to interact with in order to successfully simulate a typical online store checkout process built with [WooCommerce][].
 
 [Element]: (https://github.com/flood-io/element)
+[WooCommerce]: (https://woocommerce.com/)
