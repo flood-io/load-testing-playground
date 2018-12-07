@@ -1,38 +1,47 @@
-import { step, By, Until, TestSettings } from "@flood/element";
+import { step, By, Until, TestSettings, TestData } from "@flood/element";
 import * as assert from "assert";
 
 export const settings: TestSettings = {
   clearCache: false,
-  clearCookies: true,
+  clearCookies: false,
   responseTimeMeasurement: "step",
   userAgent: "I AM ROBOT",
   actionDelay: 1,
-  stepDelay: 1,
-  name: "Flood challenge"
+  stepDelay: 1
 };
 
-export default async () => {
+let data = [{ age: 42 }, { age: 16 }, { age: 29 }, { age: 54 }, { age: 31 }];
+
+interface Row {
+  age: number;
+}
+
+TestData.fromData<Row>(data)
+  .shuffle()
+  .circular();
+
+export default () => {
   step("1. Start", async browser => {
     await browser.visit("https://challenge.flood.io");
 
-    await browser.takeScreenshot();
-  });
-
-  step("2. Age", async browser => {
     let button = By.css("#new_challenger > input.btn.btn-xl.btn-default");
     await browser.wait(Until.elementIsVisible(button));
-    await browser.click(button);
-
-    let select = By.id("challenger_age");
-    await browser.wait(Until.elementIsVisible(select));
-    await browser.selectByValue(select, "42");
 
     await browser.takeScreenshot();
+    await browser.click(button);
+  });
+
+  step("2. Age", async (browser, row: Row) => {
+    let select = By.id("challenger_age");
+    await browser.wait(Until.elementIsVisible(select));
+    await browser.selectByValue(select, row.age.toString());
+
+    await browser.takeScreenshot();
+
+    await browser.click("input.btn");
   });
 
   step("3. Largest Order", async browser => {
-    await browser.click("input.btn");
-
     let table = By.css("table tbody tr td:first-of-type label");
     await browser.wait(Until.elementIsVisible(table));
 
