@@ -17,7 +17,7 @@ example:
 
 ### Using `element`
 
-Clone this repo locally, and execute [`element`][Element] to run the example on your local machine:
+Clone this repo locally, and execute [`element` CLI][Element] to run the example on your local machine:
 
 ```bash
 npx @flood/element-cli run ./element/woocommerce/example.ts --no-headless
