@@ -1,19 +1,8 @@
-import {
-  step,
-  TestSettings,
-  Until,
-  By,
-  Browser,
-  TestData,
-  ENV,
-} from '@flood/element'
+import { step, TestSettings, Browser, TestData, ENV } from '@flood/element'
 
-/**
- * Unique Test Data
- * Version: 2.0
- */
+const globalBrowserID = `${ENV.FLOOD_GRID_NODE_SEQUENCE_ID}_${ENV.BROWSER_ID}`
+
 export default () => {
-  const globalBrowserID = `${ENV.FLOOD_GRID_NODE_SEQUENCE_ID}_${ENV.BROWSER_ID}`
   interface UserData {
     id: string
     username: string
