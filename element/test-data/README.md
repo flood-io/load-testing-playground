@@ -26,11 +26,11 @@ npx @flood/element-cli ./element/test-data/example.ts --no-headless
 
 ### Using [Flood](https://flood.io)
 
-Upload [example.ts](./example.ts) and [users.csv][] to an existing Stream on Flood, or [run it directly on Flood](https://app.flood.io/launch/github/flood-io/load-testing-playground/element/test-data)
+Upload [example.ts](./example.ts) and [users.csv][./users.csv] to an existing Stream on Flood, or [run it directly on Flood](https://app.flood.io/launch/github/flood-io/load-testing-playground/element/test-data)
 
 ## The idea behind the example
 
-This example show how you can use our built in [Test Data][] support to programatically cycle through different values during each iteration of your test.
+This example show how you can use our built in [Test Data][] support to programatically cycle through a unique set of values during each iteration of your test.
 
 [Test Data]: (https://element.flood.io/docs/1.0/api/TestData)
 [Element]: (https://github.com/flood-io/element)
