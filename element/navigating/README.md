@@ -21,4 +21,4 @@ export default () => {
 }
 ```
 
-In this example instruct the browser to navigate to our Wordpress example site.
+In this example we instruct the browser to navigate to our Wordpress example site and take a screenshot.
