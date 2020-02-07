@@ -7,7 +7,9 @@ files:
   - ./example.ts
 ---
 
-# Load testing SAP GUI with Netweave example
+# Load testing SAP GUI with NetWeaver example
+
+Tradional, desktop-based SAP GUI environments can be targeted via a browser using Element if presented via [NetWeaver](https://www.sap.com/products/netweaver-platform.html)
 
 ## How to use
 
