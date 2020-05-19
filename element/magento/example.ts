@@ -2,12 +2,12 @@ import { step, TestSettings, Until, By, Key, Device } from '@flood/element'
 import * as assert from 'assert'
 
 export default () => {
-  step('Test: User lands on the homepage', async browser => {
+  step('Test: User lands on the homepage', async (browser) => {
     await browser.visit('http://magento2-demo.nexcess.net/')
     await browser.takeScreenshot()
   })
 
-  step('Test: User searches for an item from the homepage', async browser => {
+  step('Test: User searches for an item from the homepage', async (browser) => {
     // Find the search box element
     const searchBox = By.css('#search')
     await browser.wait(Until.elementIsVisible(searchBox))
@@ -27,7 +27,7 @@ export default () => {
     await browser.click(By.css('.product-image-photo:first-of-type'))
   })
 
-  step('Test: Add the item to the shopping cart', async browser => {
+  step('Test: Add the item to the shopping cart', async (browser) => {
     const black = By.css('.swatch-option.color:first-of-type')
     const large = By.css('.swatch-option.text:nth-of-type(4)')
     const addToCart = By.css('button.tocart')
@@ -43,7 +43,7 @@ export default () => {
     await browser.takeScreenshot()
   })
 
-  step('Test: User visits the shopping cart', async browser => {
+  step('Test: User visits the shopping cart', async (browser) => {
     const showCart = By.css('.showcart')
     await browser.click(showCart)
     const viewCart = By.css('.viewcart')
@@ -59,7 +59,7 @@ export default () => {
     assert(price === '$45.00', 'Has the correct total in the cart')
   })
 
-  step('Test: User goes through the checkout process', async browser => {
+  step('Test: User goes through the checkout process', async (browser) => {
     await browser.click(By.visibleText('Proceed to Checkout'))
     await browser.wait(Until.urlContains('checkout'))
     // Wait for the form to load

@@ -5,7 +5,7 @@ import { step, TestSettings, Until, By } from '@flood/element'
  * Version: 2.0
  */
 export default () => {
-  step('The Flood Store: Home', async browser => {
+  step('The Flood Store: Home', async (browser) => {
     await browser.visit('https://wordpress.loadtest.io/')
 
     const pageTextVerify = By.visibleText('Welcome to the Flood Store')
@@ -14,7 +14,7 @@ export default () => {
     await browser.takeScreenshot()
   })
 
-  step('The Flood Store: Click Hoodies', async browser => {
+  step('The Flood Store: Click Hoodies', async (browser) => {
     const lnkHoodies = await browser.findElement(By.partialLinkText('Hoodies'))
     await lnkHoodies.click()
 
@@ -24,7 +24,7 @@ export default () => {
     await browser.takeScreenshot()
   })
 
-  step('The Flood Store: Add To Cart', async browser => {
+  step('The Flood Store: Add To Cart', async (browser) => {
     const addHoodieToCart = await browser.findElement(
       By.xpath('//a[@data-product_id=39]'),
     )
@@ -33,7 +33,7 @@ export default () => {
     await browser.takeScreenshot()
   })
 
-  step('The Flood Store: View Cart', async browser => {
+  step('The Flood Store: View Cart', async (browser) => {
     await browser.visit('https://wordpress.loadtest.io/cart')
 
     const pageTextVerify1 = By.visibleText('Free shipping')
@@ -45,7 +45,7 @@ export default () => {
     await browser.takeScreenshot()
   })
 
-  step('The Flood Store: Proceed to Checkout', async browser => {
+  step('The Flood Store: Proceed to Checkout', async (browser) => {
     const lnkProceedToCheckout = By.css(
       '#post-14 > div > div > div > div > div > a',
     )
@@ -60,7 +60,7 @@ export default () => {
     await browser.takeScreenshot()
   })
 
-  step('The Flood Store: Checkout Data Entry', async browser => {
+  step('The Flood Store: Checkout Data Entry', async (browser) => {
     //let billingFirstName = await browser.findElement(By.id('billing_first_name'))
 
     // Fill in text field - billing First Name
@@ -120,7 +120,7 @@ export default () => {
     await browser.takeScreenshot()
   })
 
-  step('The Flood Store: Place Order', async browser => {
+  step('The Flood Store: Place Order', async (browser) => {
     const btnPlaceOrder = By.xpath(
       "//button[contains(@name, 'woocommerce_checkout_place_order')]",
     )

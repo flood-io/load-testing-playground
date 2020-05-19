@@ -3,7 +3,7 @@ import { step, TestSettings, Until, By, Device } from '@flood/element'
 let setUp = 1
 
 export default () => {
-  step('Test: Start', async browser => {
+  step('Test: Start', async (browser) => {
     if (setUp === 1) {
       console.log('Load video for the first time')
       await browser.visit('https://www.youtube.com/watch?v=6fvhLrBrPQI')

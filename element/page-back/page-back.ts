@@ -2,16 +2,16 @@ import { step, TestSettings, Until, By } from '@flood/element'
 import * as assert from 'assert'
 
 export const settings: TestSettings = {
-    loopCount: -1,
-    screenshotOnFailure: true,
-	description: 'Browser Back button demo',
-	actionDelay: 2,
-	stepDelay: 2,
-	disableCache: true,
-	clearCookies: true,
-    chromeVersion: 'stable',
-    ignoreHTTPSErrors: true
-	//responseTimeMeasurement: 'page'
+  loopCount: -1,
+  screenshotOnFailure: true,
+  description: 'Browser Back button demo',
+  actionDelay: 2,
+  stepDelay: 2,
+  disableCache: true,
+  clearCookies: true,
+  chromeVersion: 'stable',
+  ignoreHTTPSErrors: true,
+  //responseTimeMeasurement: 'page'
 }
 
 /**
@@ -19,40 +19,31 @@ export const settings: TestSettings = {
  * Version: 1.0
  */
 export default () => {
+  step('The Flood Store: Home', async (browser) => {
+    await browser.visit('https://wordpress.loadtest.io')
 
-	step('The Flood Store: Home', async browser => {
+    let pageTextVerify = By.visibleText('Welcome to the Flood Store.')
+    await browser.wait(Until.elementIsVisible(pageTextVerify))
 
-		await browser.visit('https://wordpress.loadtest.io')
+    await browser.takeScreenshot()
+  })
 
-		let pageTextVerify = By.visibleText("Welcome to the Flood Store.")
-		await browser.wait(Until.elementIsVisible(pageTextVerify))
+  step('The Flood Store: Click Hoodies', async (browser) => {
+    let lnkHoodies = await browser.findElement(By.partialLinkText('Hoodies'))
+    await lnkHoodies.click()
 
-		await browser.takeScreenshot()
+    let pageTextVerify = By.visibleText('Hoodie with Logo')
+    await browser.wait(Until.elementIsVisible(pageTextVerify))
 
-	})
+    await browser.takeScreenshot()
+  })
 
-	step('The Flood Store: Click Hoodies', async browser => {
+  step('The Flood Store: Page Back', async (browser) => {
+    const page = (browser as any).page
+    await page.goBack()
 
-		let lnkHoodies = await browser.findElement(By.partialLinkText("Hoodies"))
-		await lnkHoodies.click()
+    await browser.wait(5)
 
-		let pageTextVerify = By.visibleText("Hoodie with Logo")
-		await browser.wait(Until.elementIsVisible(pageTextVerify))
-
-		await browser.takeScreenshot()
-
-	})
-
-	step('The Flood Store: Page Back', async browser => {
-
-        const page = (browser as any).page
-        await page.goBack()
-
-        await browser.wait(5)
-
-        await browser.takeScreenshot()
-
-	})
-
-
+    await browser.takeScreenshot()
+  })
 }
