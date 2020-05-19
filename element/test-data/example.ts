@@ -13,8 +13,8 @@ export default () => {
     .circular()
 
   step('Print to console', async (browser: Browser, data: UserData) => {
-    let {username, password} = data
-    console.dir({globalBrowserID, username, password})
+    let { username, password } = data
+    console.dir({ globalBrowserID, username, password })
   })
 }
 
