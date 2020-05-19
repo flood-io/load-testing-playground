@@ -21,7 +21,7 @@ import { step, TestSettings, Browser, TestData, Until, By } from '@flood/element
 export default () => {
 
   step('Event Page', async browser => {
-    await browser.visit('https://event.webcasts.com/test')
+    await browser.visit('https://event.videostream.com/test')
 
     //wait for media player to load and play within an iframe
     const page = (browser as any).page

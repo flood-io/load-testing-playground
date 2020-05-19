@@ -21,8 +21,9 @@ export default () => {
 
 	step('Authentication: Home', async browser => {
 
-        await browser.page.authenticate('https://www.test.dgn-digital.com/', ['user', 'password'])
-        await browser.visit('https://www.test.dgn-digital.com/')
+		const page = (browser as any).page
+        await page.authenticate('https://www.test.mydomain.com/', ['user', 'password'])
+        await browser.visit('https://www.test.mydomain.com/')
 
 		await browser.takeScreenshot()
 

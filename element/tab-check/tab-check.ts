@@ -24,7 +24,7 @@ export default () => {
         const page = (browser as any).page
         const pages = (browser as any).pages
         
-        await page.goto("https://jriz.io/?page_id=1457", {waitUntil: 'load'});
+        await page.goto("https://wordpress.loadtest.io", {waitUntil: 'load'});
         
         await page.click("#post-1457 > div > div > a:nth-child(1)");
 
