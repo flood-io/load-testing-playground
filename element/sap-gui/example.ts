@@ -1,11 +1,21 @@
-import { Browser, step, TestSettings, By, Until, Key, Locator, ElementHandle } from '@flood/element'
+import {
+  Browser,
+  step,
+  TestSettings,
+  By,
+  Until,
+  Key,
+  Locator,
+  ElementHandle,
+  TestData,
+} from '@flood/element'
 import assert from 'assert'
 export const settings: TestSettings = {
   waitUntil: 'visible',
   ignoreHTTPSErrors: true,
   waitTimeout: 120,
   actionDelay: 5,
-  chromeVersion: 'stable'
+  chromeVersion: 'stable',
 }
 
 async function pressButton(b: Browser, locator: Locator) {
@@ -16,7 +26,6 @@ async function pressButton(b: Browser, locator: Locator) {
 }
 
 export default () => {
-
   interface UserData {
     id: string
     username: string
@@ -27,12 +36,15 @@ export default () => {
     .circular()
 
   step('Login', async (b: Browser, data: UserData) => {
-    let {username, password} = data
+    let { username, password } = data
 
     try {
-      await b.visit('https://sap43.tricentis.com/sap/bc/gui/sap/its/webgui?sap-client=001', {
-        waitUntil: 'domcontentloaded',
-      })
+      await b.visit(
+        'https://sap43.tricentis.com/sap/bc/gui/sap/its/webgui?sap-client=001',
+        {
+          waitUntil: 'domcontentloaded',
+        },
+      )
     } catch {}
     let usernameInput = await b.findElement(By.id('sap-user'))
     await b.wait(Until.elementIsVisible(usernameInput))
