@@ -29,7 +29,6 @@ export default () => {
 	step('Print to console', async (browser: Browser, data: UserData) => {
 	
 		console.log('global browser ID: ', globalBrowserID, '| user: ', `${data.username}`, ' | password: ', `${data.password}`)
-		console.log('global browser ID: ', globalBrowserID)
 
 	})
 
